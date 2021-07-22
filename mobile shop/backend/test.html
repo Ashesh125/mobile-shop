@@ -1,0 +1,51 @@
+<!DOCTYPEhtml >
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <metahttp - equiv="X-UA-Compatible" content="IE=edge">
+        <title> Chart JS Demo </title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js">
+        </script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <script>
+            function GenerateChart() {
+
+                new Chart(document.getElementById("bar-chart"), {
+                    type: 'bar',
+                    data: {
+                        labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+                        datasets: [{
+                            label: "Population (millions)",
+                            backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                            data: [2478, 5267, 734, 784, 433]
+                        }]
+                    },
+                    options: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Predicted world population (millions) in 2050'
+                        }
+                    }
+                });
+            }
+        </script>
+</head>
+
+<body>
+    This space is reserved for my Chart JS graphs!
+    <br>
+    <br>
+    <button onclick="GenerateChart()"> Generate Chart </button><br><br>
+
+    <div style="position: relative; height:800px; width:800px">
+        <canvas id="bar-chart" width="800" height="450"></canvas>
+    </div>
+</body>
+
+</html>

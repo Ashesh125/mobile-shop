@@ -1,0 +1,99 @@
+If u cant use Sql => Perform in the given order
+
+for tbl_customers
+-----------------
+create table tbl_customers (c_id int not null auto_increment, c_name varchar(225) not null, c_username varchar(225) not null, c_password varchar(20) not null,
+c_email varchar(100) not null,c_phone int(10) not null, primary key (c_id));
+
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| c_id       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| c_name     | varchar(225) | NO   |     | NULL    |                |
+| c_username | varchar(225) | NO   |     | NULL    |                |
+| c_password | varchar(20)  | NO   |     | NULL    |                |
+| c_email    | varchar(100) | NO   |     | NULL    |                |
+| c_phone    | int(10)      | NO   |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+
+
+for tbl_catagories
+----------------------
+create table tbl_catagories (cat_id int not null auto_increment,cat_name varchar(20) not null,primary key(cat_id));
+
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| cat_id   | int(11)     | NO   | PRI | NULL    | auto_increment |
+| cat_name | varchar(20) | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+
+
+for admin table
+---------------------------
+create table tbl_admin (admin_id int not null auto_increment,admin_name varchar(50) not null, admin_password varchar(50) not null ,primary key (admin_id));
+
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| admin_id       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| admin_name     | varchar(50) | NO   |     | NULL    |                |
+| admin_password | varchar(50) | NO   |     | NULL    |                |
++----------------+-------------+------+-----+---------+----------------+
+
+for tbl_products(half)
+-----------------------
+create table tbl_products (p_id int not null auto_increment,p_name varchar(225) not null, p_price int not null,p_qty int,cat_id int not null,
+img_path varchar(225),desc_id int not null,constraint fk_CatagoryId foreign key (cat_id)references tbl_catagories (cat_id) ,primary key (p_id));
+
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| p_id     | int(11)      | NO   | PRI | NULL    | auto_increment |
+| p_name   | varchar(225) | NO   |     | NULL    |                |
+| p_price  | int(11)      | NO   |     | NULL    |                |
+| p_qty    | int(11)      | YES  |     | NULL    |                |
+| cat_id   | int(11)      | NO   | MUL | NULL    |                |
+| img_path | varchar(225) | YES  |     | NULL    |                |
+| desc_id  | int(11)      | NO   |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+
+
+for tbl_descriptions:
+-------------------------------
+create table tbl_descriptions (p_id int not null,processor varchar(50), graphics varchar(50),RAM varchar(50),
+storage varchar(50),display varchar(50),color varchar(50),weight varchar (50), constraint fk_ProductId foreign key (p_id) references tbl_products (p_id));
+
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| desc_id   | int(11)     | NO   | PRI | NULL    | auto_increment |
+| p_id      | int(11)     | NO   | MUL | NULL    |                |
+| processor | varchar(50) | YES  |     | NULL    |                |
+| graphics  | varchar(50) | YES  |     | NULL    |                |
+| RAM       | varchar(50) | YES  |     | NULL    |                |
+| storage   | varchar(50) | YES  |     | NULL    |                |
+| display   | varchar(50) | YES  |     | NULL    |                |
+| color     | varchar(50) | YES  |     | NULL    |                |
+| weight    | varchar(50) | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+
+
+
+for tbl_orders
+------------
+create table tbl_orders (o_id int not null auto_increment, c_id int not null,p_id int not null, status varchar(10) not null, o_qty int not null,
+constraint fk_CustomerId foreign key(c_id)references tbl_customers (c_id),constraint fk_ProductId2 foreign key(p_id) references tbl_products (p_id),primary key(o_id));
+
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| o_id   | int(11)     | NO   | PRI | NULL    | auto_increment |
+| c_id   | int(11)     | NO   | MUL | NULL    |                |
+| p_id   | int(11)     | NO   | MUL | NULL    |                |
+| status | varchar(10) | NO   |     | NULL    |                |
+| o_qty  | int(11)     | NO   |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+
+
+

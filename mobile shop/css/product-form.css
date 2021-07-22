@@ -1,0 +1,61 @@
+#main-content,
+#catagory-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#product-form {
+    display: flex;
+    width: 700px;
+    height: 545px;
+    background-color: wheat;
+    box-shadow: 10px 10px 11px 0px #000000;
+    justify-content: space-around;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 250px;
+    height: 20px;
+    outline: none;
+    border: 1px solid black;
+}
+
+input::placeholder {
+    font-size: 14px;
+}
+
+input:focus {
+    background-color: lavender;
+    transition: 0.5s ease;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 0 auto 0 -30%;
+}
+
+label {
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 8px;
+}
+
+select,
+option {
+    height: 25px;
+    width: 97%;
+    margin-left: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

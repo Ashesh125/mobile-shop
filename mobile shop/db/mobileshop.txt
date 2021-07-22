@@ -1,0 +1,355 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 22, 2021 at 05:44 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.3.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `mobileshop`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_admin`
+--
+
+CREATE TABLE `tbl_admin` (
+  `admin_id` int(11) NOT NULL,
+  `admin_name` varchar(50) NOT NULL,
+  `admin_password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_admin`
+--
+
+INSERT INTO `tbl_admin` (`admin_id`, `admin_name`, `admin_password`) VALUES
+(47, 'admin', 'q+KLCawURUA='),
+(48, 'ashesh', 'q/WOBbFNRkEe');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_catagories`
+--
+
+CREATE TABLE `tbl_catagories` (
+  `cat_id` int(11) NOT NULL,
+  `cat_name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_catagories`
+--
+
+INSERT INTO `tbl_catagories` (`cat_id`, `cat_name`) VALUES
+(1, 'Laptop'),
+(2, 'Mobile'),
+(5, 'Mobile Accessories'),
+(8, 'Laptop Accessories'),
+(9, 'Miscellaneous'),
+(11, 'glass');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_count`
+--
+
+CREATE TABLE `tbl_count` (
+  `count_id` int(11) NOT NULL,
+  `count_type` varchar(30) NOT NULL,
+  `count_no` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_count`
+--
+
+INSERT INTO `tbl_count` (`count_id`, `count_type`, `count_no`) VALUES
+(5, 'Logged In Users', 17),
+(6, 'Orders Pending', 10),
+(7, 'Orders completed', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_customers`
+--
+
+CREATE TABLE `tbl_customers` (
+  `c_id` int(11) NOT NULL,
+  `c_name` varchar(225) NOT NULL,
+  `c_password` varchar(20) NOT NULL,
+  `c_email` varchar(100) NOT NULL,
+  `c_phone` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_customers`
+--
+
+INSERT INTO `tbl_customers` (`c_id`, `c_name`, `c_password`, `c_email`, `c_phone`) VALUES
+(112, 'Ashesh Shakya', 'q/WCAbFBFgBJ', 'ashesh112233@gmail.com', '1111111111'),
+(113, 'Suja Maharjan', 'ufOMAbFQHRI=', 'suja@gmail.com', '9818544141'),
+(114, 'Olivier Reilly', 'peqPFqdXRkEe', 'olivier@gmail.com', '9841985698'),
+(115, 'Ad Krueger', 'q+KHBKNBFhc=', 'ad@gmail.com', '9856986598'),
+(146, 'sagar shrestha', '+r/eV/QQQ0Afbg==', 'sid.shrestha77@gmail.com', '9885127649'),
+(151, 'Eren Eager', 'oe+KDKNJGwdEK9QUVg==', 'titan@hotmail.com', '4584123245'),
+(162, 'Test 3', 'vuOVFPMVRgdILMFLFRY=', '9841633572@gmail.com', '4545454545'),
+(163, 'Nelson Terry', 'uPOIDqtLEEI=', 'nelson.terry@example.com', '9310504993'),
+(165, 'Ritthy Fowler', 'vuOVFPMVAxZeK4RK', 'ritthy.fowler@example.com', '6773686968'),
+(166, 'erin simpson', 'vuOVFPMVAxZeK4RK', 'erin.simpson@example.com', '9412882325'),
+(167, 'test 10', 'vuOVFPMVAxZeK4RK', 'test10@fmail.com', '1111111111'),
+(168, 'test9', 'vuOVFPtREgBZZg==', 'test9@hotmail.com', '1111111111'),
+(169, 'test8', 'vuOVFPpREgBZZw==', 'test8@gmail.com', '3333333333'),
+(170, 'test7', 'vuOVFPVREgBZaA==', 'test7@gamil.com', '4444444444'),
+(171, 'test6', 'vuOVFPRREgBZaQ==', 'test6@gmail.com', '6666666666'),
+(172, 'test4', 'vuOVFPZREgBZaw==', 'test4@gmail.com', '4545454545'),
+(173, 'test3', 'vuOVFPFREgBZbA==', 'test3@gmail.com', '1231231232');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_descriptions`
+--
+
+CREATE TABLE `tbl_descriptions` (
+  `p_id` int(11) NOT NULL,
+  `processor` varchar(50) DEFAULT NULL,
+  `graphics` varchar(50) DEFAULT NULL,
+  `RAM` varchar(50) DEFAULT NULL,
+  `storage` varchar(50) DEFAULT NULL,
+  `display` varchar(50) DEFAULT NULL,
+  `color` varchar(50) DEFAULT NULL,
+  `battery` int(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_descriptions`
+--
+
+INSERT INTO `tbl_descriptions` (`p_id`, `processor`, `graphics`, `RAM`, `storage`, `display`, `color`, `battery`) VALUES
+(39, '11th Generation Intel® Core™ i3-1115G4', 'Intel® UHD Graphics', '8', '512 SSD', '15.6', 'grey,black', 0),
+(40, ' Snapdragon 678', '13+2MP Rear + 5MP Front', '4 GB', '64 GB', '6.43 inches', 'aqua green,aqua,green', 5000),
+(41, '8nm', '48MP+5MP+2MP+2MP Quad camera+8MP Front', '4', '64', '6.5', 'black,white', 6000),
+(42, '', '', '', '', '', 'black', 0),
+(43, '', '', '', '', '', 'black', 0),
+(44, '', '', '', '', '', 'white,green,gray', 0),
+(70, '', '', '', '', '', '', 0),
+(77, '11th Gen Intel@ Core i3-1125G4 (3.7GHz)', 'Intel UHD shared graphics', '8 GB ', '512 GB ', '13-inches', 'silver', 0),
+(78, 'intel i5 ', 'AMD', '16 GB', '1 TB', '15-inches', 'red,green', 0),
+(79, '', '', '', '', '', '', 0),
+(80, '', '', '', '', '', '', 0),
+(81, 'Qualcomm SM6115 Snapdragon 662 ', '48 MP, f/1.7, (wide), 1/2.0', '4 GB', '128 GB', '6.5 inches', 'black,blue,red,silver,gold', 5000),
+(82, '2.3GHz quad-core', 'AMD', '4 GB', '256 GB', '14 inches', 'silver', 0),
+(83, '10th Generation Intel Core i3-1005G1', 'Intel UHD Graphics with shared graphics memory', '4 GB', '1 TB HDD', '14 inches', 'silver,black', 0),
+(84, '10th Gen Intel Core i3', '', '8 GB ', '256 GB SSD', '14 inches', 'black', 0),
+(85, 'i5 11th Gen', ' Intel® Iris® Xe Graphics', '8 GB ', '256 GB SSD', '14 inches', 'black,blue,silver', 0),
+(86, '10th Gen Intel® Core™ i7-10750H 6 Core', 'NVIDIA® GeForce RTX™ 2060', '16 GB', '512GB SSD', '15.6 inches', 'black', 0),
+(87, '11th Generation Intel Core i5-1135G7', 'Intel Iris Xe Graphics', '8 GB ', '256 GB SSD', '14 inches', 'silver', 0),
+(88, '11th Gen Intel Core i7-1165G7', 'Intel Iris Xe Integrated Graphics', '8 GB ', '1 TB HDD', '13.3 inches', 'silver', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_orders`
+--
+
+CREATE TABLE `tbl_orders` (
+  `c_id` int(11) NOT NULL,
+  `p_id` int(11) NOT NULL,
+  `order_date` varchar(50) NOT NULL,
+  `o_price` int(255) NOT NULL,
+  `location` varchar(100) DEFAULT NULL,
+  `status` varchar(10) NOT NULL,
+  `bill_no` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_orders`
+--
+
+INSERT INTO `tbl_orders` (`c_id`, `p_id`, `order_date`, `o_price`, `location`, `status`, `bill_no`) VALUES
+(112, 40, '2021/4/17', 21650, 'Kageshwari Manohara', '0', 66669),
+(112, 39, '2021/4/17', 94100, 'Kirtipur', '1', 66670),
+(151, 44, '2021/4/19', 400, 'Kageshwari Manohara', '1', 66677),
+(151, 41, '2021/4/20', 22150, 'Gokarneshwar', '0', 66678),
+(112, 41, '2021/4/20', 22150, 'Kageshwari Manohara', '1', 66679),
+(112, 43, '2021/4/20', 550, 'Dakshinkali', '1', 66680),
+(112, 39, '2021/7/22', 94050, 'Budanilkantha', '1', 66681),
+(172, 80, '2021/7/22', 2030, 'Banasthali', '0', 66682),
+(172, 78, '2021/7/22', 99050, 'Tokha', '0', 66683),
+(173, 86, '2021/7/22', 280050, 'Budanilkantha', '0', 66684),
+(171, 85, '2021/7/22', 101100, 'Swyambu', '1', 66685),
+(171, 80, '2021/7/22', 2100, 'Budanilkantha', '0', 66686),
+(173, 39, '2021/7/22', 94090, 'Putalishadak', '0', 66687),
+(173, 40, '2021/7/22', 21690, 'Putalishadak', '0', 66688),
+(173, 42, '2021/7/22', 590, 'Putalishadak', '0', 66689),
+(173, 80, '2021/7/22', 2090, 'Putalishadak', '0', 66690);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_products`
+--
+
+CREATE TABLE `tbl_products` (
+  `p_id` int(11) NOT NULL,
+  `p_name` varchar(225) NOT NULL,
+  `p_price` int(11) NOT NULL,
+  `discount` int(50) NOT NULL DEFAULT 0,
+  `p_qty` int(11) DEFAULT NULL,
+  `cat_id` int(11) NOT NULL,
+  `img_name` varchar(225) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_products`
+--
+
+INSERT INTO `tbl_products` (`p_id`, `p_name`, `p_price`, `discount`, `p_qty`, `cat_id`, `img_name`) VALUES
+(39, 'Inspiron 15 5509', 94000, 0, 8, 1, 'inspiron-15-5509.webp'),
+(40, 'Redmi Note 10', 24000, 10, 0, 2, 'redmi-note-10.jpg'),
+(41, 'Samsung Galaxy M12', 26000, 15, 9, 2, 'samsumg-galaxy-m12.jpg'),
+(42, 'Android Charger Type D', 500, 0, 24, 5, 'android-charger-type-D.jfif'),
+(43, 'Android Charger Type C', 500, 0, 11, 5, 'android-charger-type-C.jfif'),
+(44, 'Multiplug Compact', 350, 0, 9, 9, 'multiplug-1.jfif'),
+(70, 'glass1', 120, 0, 10, 11, ''),
+(77, 'Inspiron 15 ', 80000, 0, 6, 1, 'laptop-1.jfif'),
+(78, 'laptop 5', 100000, 1, 0, 1, 'devices.svg'),
+(79, 'Dell Laptop Charger', 2000, 0, 15, 8, 'laptop-charger-1.jfif'),
+(80, 'HP Laptop Charger', 2000, 0, 15, 8, 'laptop-charger-2.jfif'),
+(81, 'Motorola Moto G9 Play', 21000, 2, 8, 2, 'motorola-moto-g9-play.jpg'),
+(82, 'Lenovo IdeaPad Slim 3', 60000, 0, 4, 1, 'laptop-3.jfif'),
+(83, 'Dell Vostro 3401', 70000, 2, 10, 1, 'laptop-5.jfif'),
+(84, 'Lenovo IdeaPad Slim 3', 80000, 0, 6, 1, 'laptop-6.jfif'),
+(85, 'Dell Inspiron 5406', 101000, 0, 9, 1, 'laptop-7.jfif'),
+(86, 'Razer Blade 15 Base Model', 280000, 0, 1, 1, 'laptop-10.jfif'),
+(87, 'HP Pavilion x360', 112000, 0, 1, 1, 'laptop-8.jfif'),
+(88, 'Lenovo Yoga Slim 7', 198500, 0, 2, 1, 'laptop-9.jfif');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `tbl_catagories`
+--
+ALTER TABLE `tbl_catagories`
+  ADD PRIMARY KEY (`cat_id`);
+
+--
+-- Indexes for table `tbl_count`
+--
+ALTER TABLE `tbl_count`
+  ADD PRIMARY KEY (`count_id`);
+
+--
+-- Indexes for table `tbl_customers`
+--
+ALTER TABLE `tbl_customers`
+  ADD PRIMARY KEY (`c_id`);
+
+--
+-- Indexes for table `tbl_descriptions`
+--
+ALTER TABLE `tbl_descriptions`
+  ADD KEY `fk_ProductId` (`p_id`);
+
+--
+-- Indexes for table `tbl_orders`
+--
+ALTER TABLE `tbl_orders`
+  ADD PRIMARY KEY (`bill_no`),
+  ADD KEY `fk_CustomerId` (`c_id`),
+  ADD KEY `fk_ProductId2` (`p_id`);
+
+--
+-- Indexes for table `tbl_products`
+--
+ALTER TABLE `tbl_products`
+  ADD PRIMARY KEY (`p_id`),
+  ADD KEY `fk_CatagoryId` (`cat_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
+--
+-- AUTO_INCREMENT for table `tbl_catagories`
+--
+ALTER TABLE `tbl_catagories`
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `tbl_count`
+--
+ALTER TABLE `tbl_count`
+  MODIFY `count_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tbl_customers`
+--
+ALTER TABLE `tbl_customers`
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
+
+--
+-- AUTO_INCREMENT for table `tbl_orders`
+--
+ALTER TABLE `tbl_orders`
+  MODIFY `bill_no` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66691;
+
+--
+-- AUTO_INCREMENT for table `tbl_products`
+--
+ALTER TABLE `tbl_products`
+  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tbl_orders`
+--
+ALTER TABLE `tbl_orders`
+  ADD CONSTRAINT `fk_CustomerId` FOREIGN KEY (`c_id`) REFERENCES `tbl_customers` (`c_id`),
+  ADD CONSTRAINT `fk_ProductId2` FOREIGN KEY (`p_id`) REFERENCES `tbl_products` (`p_id`);
+
+--
+-- Constraints for table `tbl_products`
+--
+ALTER TABLE `tbl_products`
+  ADD CONSTRAINT `fk_CatagoryId` FOREIGN KEY (`cat_id`) REFERENCES `tbl_catagories` (`cat_id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

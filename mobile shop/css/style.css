@@ -1,0 +1,354 @@
+/* html {
+	scroll-behavior: smooth;
+  } */
+
+.brand-txt {
+    color: #21438d;
+}
+
+.home {
+    background-image: linear-gradient(to right, rgb(115, 194, 251, 0), rgb(115, 194, 251, 0.3));
+}
+
+
+/* for no. and time */
+
+.info-section {
+    background-color: #21438d;
+    color: white;
+}
+
+
+/* for mbl device */
+
+@media (max-width: 992px) {
+    .mobileMenu {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 80vw;
+        height: 100vh;
+        -webkit-transition: all ease 0.5s;
+        transition: all ease 0.5s;
+        z-index: 999;
+        background-color: white;
+    }
+    .mobileMenu.open {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+    .mobileMenu .navbar-nav {
+        overflow-y: auto;
+    }
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+    }
+    .overlay.open {
+        display: block;
+        z-index: 99;
+    }
+    .footer {
+        margin-bottom: 32px;
+    }
+}
+
+
+/* navbar */
+
+.navbar {
+    background: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+
+/* toggle btn */
+
+.navbar-toggler {
+    width: 48px;
+    height: 40px;
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.navbar-toggler .line {
+    width: 100%;
+    float: left;
+    height: 3px;
+    position: relative;
+    background-color: #21438d;
+    margin-bottom: 4px;
+    transition: all 0.25s ease-in-out;
+}
+
+
+/* menu */
+
+.nav-item {
+    margin-left: 10px;
+}
+
+.nav-link {
+    color: #3f3f3f;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:before {
+    content: "";
+    width: 0;
+    height: 2px;
+    top: 100%;
+    left: 0;
+    background-color: #21438d!important;
+    margin-right: 10px;
+    position: absolute;
+    transition: all 0.4s linear;
+}
+
+.nav-link:hover:before {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #21438d!important;
+}
+
+
+/* main title of website */
+
+.title {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.focus-title {
+    font-size: 55px;
+}
+
+.title:before {
+    content: "";
+    width: 55%;
+    height: 5px;
+    top: 98%;
+    left: 0;
+    background-color: #21438d!important;
+    position: absolute;
+}
+
+.description {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.fa-icon {
+    font-size: 20px;
+    padding: 0 5px;
+}
+
+.service-icon {
+    padding: 15px;
+    border: 3px solid #3f3f3f;
+    border-radius: 50%;
+    font-size: 40px;
+    color: #FFF;
+    text-shadow: 1px 1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, -1px -1px 0px #000;
+    transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+}
+
+.service-icon:hover {
+    color: #3f3f3f;
+    text-shadow: 1px 1px 0px #fff, 1px -1px 0px #fff, -1px 1px 0px #fff, -1px -1px 0px #fff;
+    transition: all ease-in 0.5s;
+    -moz-transition: all ease-in 0.5s;
+    -webkit-transition: all ease-in 0.5s;
+    -o-transition: all ease-in 0.5s;
+}
+
+.heading {
+    color: #21438d;
+    letter-spacing: 1px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+@media only screen and (max-width: 991px) {
+    .display-none {
+        display: none !important;
+    }
+    .nav-item {
+        margin-left: 0px;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    }
+    .nav-item .nav-link {
+        font-size: 22px;
+    }
+    .nav-item .nav-link i {
+        font-size: 26px;
+    }
+    .info-section {
+        position: fixed;
+        z-index: 999;
+        bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .title {
+        font-size: 28px;
+    }
+    .focus-title {
+        font-size: 35px;
+    }
+    .badge {
+        top: -8px;
+        left: 97px;
+    }
+}
+
+@media only screen and (min-width: 426px) {
+    .image {
+        width: 400px !important;
+    }
+    .badge {
+        top: -8px;
+        left: 117px;
+    }
+}
+
+@media only screen and (min-width: 991px) {
+    .badge {
+        top: 0;
+        left: 25px;
+    }
+}
+
+.image-div {
+    display: flex;
+    justify-content: center;
+}
+
+.center-content {
+    display: flex;
+    align-items: center;
+}
+
+.media a {
+    height: 70px;
+    width: 70px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f6fa;
+    box-shadow: 1px 4px 2px 2px #dcdde1;
+    border-radius: 50px;
+}
+
+.media a:hover {
+    text-decoration: none;
+}
+
+.media a i {
+    transition: all 0.3s linear;
+}
+
+.media a:hover i {
+    transform: scale(1.2);
+}
+
+.fa-facebook-f {
+    color: #3b5999;
+}
+
+.fa-instagram {
+    color: #e4405f;
+}
+
+.card-img-top {
+    height: 200px;
+}
+
+h2 {
+    margin: 15px auto;
+}
+
+.login .heading::before {
+    content: "";
+    width: 55px;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background-color: #21438d!important;
+    position: absolute;
+}
+
+.service .price {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.service .list span {
+    display: block;
+}
+
+.service .list,
+.product .list {
+    line-height: 2;
+}
+
+.service .list i,
+.product .list i {
+    margin-right: 8px;
+    color: #424242;
+}
+
+.service .circle {
+    margin-top: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.service .card {
+    box-shadow: 0px 2px 7px 2px rgb(0 0 0 / 12%);
+}
+
+.bill .card-img-top {
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.card-img-top {
+    box-shadow: 0px 2px 7px 2px rgb(0 0 0 / 12%);
+}
+
+.bill-total {
+    font-weight: bold;
+}
+
+.bill-table td {
+    border-top: none!important;
+    padding: .5rem !important;
+}
+
+#alert2 {
+    display: none;
+}
