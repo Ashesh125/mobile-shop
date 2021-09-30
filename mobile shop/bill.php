@@ -112,7 +112,7 @@
                                                 ";
                                         }else{
                                             echo "
-                                                <span>Rs $priceorg</span>
+                                                <span>Rs 0</span>
                                             ";
                                         }
                                     
