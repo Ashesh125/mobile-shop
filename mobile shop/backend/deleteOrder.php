@@ -3,9 +3,8 @@
    
     if($_GET){
         $bill_no = $_GET['id'];
-        $p_id = $_GET['pid'];
 
-        $sql = "DELETE FROM tbl_orders WHERE p_id = $p_id and bill_no =$bill_no";
+        $sql = "DELETE FROM tbl_orders WHERE bill_no =$bill_no";
         
         if(mysqli_query($conn, $sql)){
             $sql_update = "UPDATE tbl_count set count_no = count_no - 1 where count_type = 'Orders Pending'";

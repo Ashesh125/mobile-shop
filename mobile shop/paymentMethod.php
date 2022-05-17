@@ -72,7 +72,7 @@
         document.getElementById("order").onclick = function(){  
             document.getElementById('alert2').style.display = "block";
             
-		document.querySelector('#alert2').onclick = function(){
+		document.querySelector('#alert2').ondblclick = function(){
                 let today = new Date();
                 let datee = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
                 let url = "http://localhost/mobile%20shop/backend/setOrder.php?bill=<?=$bill_no?>&location=<?=$location?>&date="+datee+"&price=<?=$gTotal?>&p_id=<?=$p_id?>&c_id=<?=$_SESSION["userId"]?>";

@@ -1,0 +1,15 @@
+ <!-- <td><?php //$product["o_price"]?></td> -->
+            <td>
+                <?php
+                    if($order['qty'] <= 0){
+                        echo "
+                            <a class='ud2' id='available' style='color:red;'><i class='fas fa-check-circle'></i></a>
+                        ";
+                    }else{
+                        echo "
+                            <a class='ud2' id='available' style='color:darkgreen;'><i class='fas fa-check-circle'></i></a>
+                        ";
+                    }
+                    
+                ?>
+            </td>

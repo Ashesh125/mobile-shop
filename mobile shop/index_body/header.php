@@ -82,6 +82,14 @@
                             <span class="fa-icon"><i class="fas fa-mobile-alt"></i></span> Contact
                         </a>
                     </li>
+                    <?php if(isset($_SESSION['user'])){?>
+                        <li class="nav-item">
+                        <a class="nav-link" href="http://localhost/mobile%20shop/cart.php">
+                            <span class="fa-icon"><i class="fas fa-shopping-cart"></i></span>
+                        </a>
+                    </li>            
+                    
+                    <?php } ?>
                     <li class="dropdown nav-item">
                         <a class="dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="fa-icon"><i class="fas fa-user"></i></span> Account
@@ -102,11 +110,10 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libss/popper.js/1.16.0/umd/popper.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <script src="js/script.js"></script>
     </body>
 </html>

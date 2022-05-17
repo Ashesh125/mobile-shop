@@ -96,7 +96,7 @@
         <input 
           type="text" 
           placeholder="Name" 
-          name="name" 
+          name="full_name" 
           id="full_name" 
           required  
         />

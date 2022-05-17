@@ -86,17 +86,18 @@
                         ?>
                     </p>
                     <div>
-                        <button type="button" class="btn btn-success" data-target="#exampleModalCenter" id="buynow"
+                       
+                    <button type="button" data-toggle='modal' class="btn btn-success" data-target="#exampleModalCenter" id="addCart"
                             <?php 
                                 if(isset($_SESSION['user'])){
-                                    echo "data-toggle='modal'";
-                                }else{
-                                    echo "onclick='plsLogin()'";
+                                    echo "onclick='addCart(".$product['id'].");'";
+                                }else{ 
+                                    echo "onclick='plsLogin();'";
                                 }
                             ?> 
-                        >
-                        Buy Now
-                    </button>
+                        >                    
+                        <i class="fas fa-shopping-cart"></i>
+                        </button>
                     </div>
 
                     <div class="list mt-3" id="<?=$show?>">
@@ -145,7 +146,7 @@
                                         </div>
                                     ";
                                 }
-                            ?>
+                        ?>
                         
                     </div>
 
@@ -161,78 +162,22 @@
         </div>
 
 
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Fill in the Following Detail</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Select Location</label>
-                                
-                                <select class="form-control" id="exampleFormControlSelect1">
-                        <option value="40,Putalishadak">Putalishadak</option>
-                        <option value="50,Chabhill">Chabhill</option>
-                        <option value="50,Samakhusi">Samakhusi</option>
-                        <option value="60,Gangaboo">Gangaboo</option>
-                        <option value="80,Kapan">Kapan</option>
-                        <option value="0,Basundhara",>Basundhara</option>
-                        <option value="50,Boudha">Boudha</option>
-                        <option value="50,Swyambu">Swyambu</option>
-                        <option value="40,Kalanki">Kalanki</option>
-                        <option value="30,Banasthali">Banasthali</option>
-                        <option value="50,Budanilkantha">Budanilkantha</option>
-                        <option value="50,Chandragiri">Chandragiri</option>
-                        <option value="50,Dakshinkali">Dakshinkali</option>
-                        <option value="50,Gokarneshwar">Gokarneshwar</option>
-                        <option value="50,Kageshwari Manohara">Kageshwari Manohara</option>
-                        <option value="100,Kirtipur">Kirtipur</option>
-                        <option value="50,Nagarjun">Nagarjun</option>
-                        <option value="50,Shankharapur">Shankharapur </option>   
-                        <option value="50,Tinkunye">Tinkunye</option>     
-                        <option value="50,Koteshwor">Koteshwor </option>     
-                        <option value="50,Sinamangal">Sinamangal</option>     
-                        <option value="50,Shankharapur">Shankharapur </option>     
-                        <option value="50,Patan">Patan</option>  
-                        <option value="40,Kupandol">Kupandol</option> 
-                        <option value="50,Satdobato">Satdobato</option> 
-                        <option value="50,Jadibuti">Jadibuti</option>     
-                        <option value="50,Tokha">Tokha</option>
-                        <option value="50,Tarakeshwar">Tarakeshwar</option>
-                      </select>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <a type="button" onclick="move();" class="btn btn-success">Save</a>
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
     </section>
 </body>
 <script>
     function plsLogin() {
         let choice = confirm('Please Create an account or log in to an existing account to Place an order');
+        
         if (choice == true) {
-            window.location.href = "http://localhost/mobile%20shop/register.php";
+            window.location.href = "http://localhost/mobile%20shop/login.php";
+            
         }
     }
-
-    function move(){
-        let value = document.getElementById('exampleFormControlSelect1').value;
-        let url = "http://localhost/mobile%20shop/bill.php?location="+value+"&p_id=<?=$p_id?>";
-        window.location.href = url;
+    function addCart(pid){
+        window.location.href = "http://localhost/mobile%20shop/cart.php?pid="+pid;
     }
+    
 </script>
 <style>
     #hide{
